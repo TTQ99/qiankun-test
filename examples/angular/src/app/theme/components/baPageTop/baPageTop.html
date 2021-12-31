@@ -1,0 +1,52 @@
+<div class="clearfix" style="position: relative;">
+  <!-- <span class="page-top-collapsed">
+      <i [class.uopicon_navigation_open]="!isCollapsed" [class.uopicon_navigation_close]="isCollapsed" (click)="onlayoutMenu()"></i>
+    </span> -->
+  <div class="fl">
+    <img style="width: 164px; margin-left: 10px" src="assets/images/logo.png">
+
+  </div>
+  <div class="user-profile fr" style="padding: 0;margin-right: 0;height: 50px">
+    <ul class="clearfix font-icon-ul">
+      <!-- <li class="topli fr cursor" (click)="onLogout()">
+                <i class="uopicon_edit" style="float:left;margin:17px 6px 17px 0;"></i>
+                <span>{{'pagetop.exit' | translate}}</span>
+            </li> -->
+      <!-- <li class="topli fr">
+                <nz-select style="width: 100px;" [nzPlaceHolder]="'common.pleasechoose'|translate" [(ngModel)]="language" (ngModelChange)="languageChange()">
+                    <nz-option *ngFor="let option of multilingual" [nzLabel]="option.value|translate" [nzValue]="option">
+                    </nz-option>
+                </nz-select>
+            </li> -->
+      <li class="topli fr" style="position: relative;padding-right:30px;cursor: pointer;">
+        <i class="iconfont icon-chakandaping" (click)="enterScreen()"></i>
+      </li>
+      <li class="topli fr" style="position: relative;padding-right:30px;">
+        <i class="uopicon_admin" style="font-size:30px;float:left;margin:10px 10px 10px 0px;"></i>
+        <!-- <span style="color: #333333;">{{userInfo?.name | translate}}</span> -->
+      </li>
+      <!-- <li class="topli fr" style="position: relative;" >
+              <div nz-dropdown [nzDropdownMenu]="menu">
+                <i class="uopicon_admin" style="font-size:30px;float:left;margin:10px 10px 10px 0px;"></i>
+                <span style="color: #333333;">{{userInfo?.name | translate}}</span>
+              </div>
+              <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu style="text-align: center;">
+                  <li nz-menu-item>
+                    <span class="cursor" [routerLink]="['/login/password']" [queryParams]="{'name': 'setting'}">{{'baPageTop.changePassword' | translate}}</span>
+                  </li>
+                </ul>
+              </nz-dropdown-menu>
+            </li> -->
+      <!-- <li class="topli fr cursor" >
+              <span (click)="enterScreen()" style="position: relative;top: 5px;"><i class="anticon anticon-laptop" style="font-size: 24px;"></i></span>
+            </li> -->
+      <!-- <li class="topli fr">
+                <nz-select class="select-top" style="width:172px;"  [(ngModel)]="selectTenant" (ngModelChange)="changeTenant()"  [nzPlaceHolder]="'common.pleasechoose'|translate ">
+                    <nz-option  *ngFor="let option of switchTenantName" [nzLabel]="option.tenantName" [nzValue]="option">
+                    </nz-option>
+                </nz-select>
+            </li> -->
+    </ul>
+  </div>
+</div>

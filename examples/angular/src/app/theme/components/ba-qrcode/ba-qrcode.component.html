@@ -1,0 +1,17 @@
+<div class="ba-qrcode-section">
+  <div class="ba-qrcode-actions">
+    <button nz-button [nzType]="'default'" (click)="handCancel()">
+      <!-- <span>{{'common.cancelText' | translate}}</span> -->
+    </button>
+    <button nz-button [nzType]="'primary'" (click)="print()">
+      <!-- <span>{{'common.print' | translate}}</span> -->
+    </button>
+  </div>
+  <div class="ba-qrcode">
+    <div class="qrcode-item" *ngFor="let item of data;index as i;" id="{{'QRCode'+i}}"
+      style="text-align: center; page-break-after: always;">
+      <qrcode [qrdata]="item.data" [width]="256" [errorCorrectionLevel]="'M'" [elementType]="'svg'"></qrcode>
+      <p>{{item.text}}</p>
+    </div>
+  </div>
+</div>

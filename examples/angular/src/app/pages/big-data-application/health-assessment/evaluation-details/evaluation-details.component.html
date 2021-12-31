@@ -1,0 +1,44 @@
+<div class="app-rule-list">
+    <!-- 面包屑 -->
+    <!-- <div class="page-header">
+                <nz-breadcrumb>
+                    <nz-breadcrumb-item>
+                        {{'bigDataApplication.title'|translate}}
+                    </nz-breadcrumb-item>
+                    <nz-breadcrumb-item>
+                        <a [routerLink]="['../']"
+                            style="color: rgba(0,0,0,.45)">{{'bigDataApplication.healthAssessment.title'|translate}}</a>
+                    </nz-breadcrumb-item>
+                    <nz-breadcrumb-item>
+                        {{'评估详情'|translate}}
+                    </nz-breadcrumb-item>
+                </nz-breadcrumb>
+            </div> -->
+    <div class="evaluation-page-content">
+        <div class="content-one">
+            <div class="content-left">
+                <p>设备信息</p>
+                <div class="content-msg">
+                    <!-- <img src="../../../../../assets/images/login-pic.png" alt=""> -->
+                    <img [src]="" alt="">
+                    <ul>
+                        <li>所属线体:{{ownedLineBody}}
+                        </li>
+                        <li>设备名称:{{deviceName}}</li>
+                        <li>设备编号:{{deviceID}}</li>
+                        <li>设备分类:{{deviceModel}}</li>
+                        <li>设备型号:{{equipmentType}}
+                        </li>
+                        <li>设备品牌:{{equipmentBrand}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-right">
+                <p>评估结果</p>
+                <div #gaugeChart id="gaugeChart" style="height: 300px; cursor: default;"></div>
+
+            </div>
+        </div>
+    </div>
+</div>

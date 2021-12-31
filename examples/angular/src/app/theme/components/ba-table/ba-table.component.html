@@ -1,0 +1,19 @@
+<div class="ba-table" #TableMainContent>
+  <div class="setting" *ngIf="isConfigThead">
+    <i nz-icon nzType="setting" nzTheme="outline" (click)="setting()"></i>
+  </div>
+  <div class="table-template">
+    <ng-content></ng-content>
+    <ng-template #totalTemplate>
+      第
+      {{pageIndex}}
+      页
+      共
+      {{totalPage}}
+      页，
+      共
+      {{total}}
+      条
+    </ng-template>
+  </div>
+</div>

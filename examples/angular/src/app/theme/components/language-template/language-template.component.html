@@ -1,0 +1,11 @@
+<div class="language-template">
+  <ng-container *ngIf="localLanguage === 'zh-CN'">
+    <ng-container *ngTemplateOutlet="tplLocale"></ng-container>
+  </ng-container>
+  <ng-container *ngIf="localLanguage === 'en-US'">
+    <ng-container *ngTemplateOutlet="tplLocale"></ng-container>
+  </ng-container>
+  <ng-container *ngIf="localLanguage === 'vi-VN'">
+    <ng-container *ngTemplateOutlet="tplLocale"></ng-container>
+  </ng-container>
+</div>

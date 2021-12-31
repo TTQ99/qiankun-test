@@ -1,0 +1,10 @@
+{
+    "/j": {
+        "target": "https://movie.douban.com/",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/j": "/j"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<div class="ba-upload">
+    <!-- 下载上传 -->
+    <ul *ngIf="exportflag" class="ba-upload-main">
+        <li>1.下载数据模板，请按照数据模板的格式输入对应的数据</li>
+        <li>
+            <button nz-button class="uploadBtn" (click)="download()">
+                <i class="anticon anticon-download"></i>
+                模板下载
+            </button>
+            <!-- <span style="color:red"> {{date}}</span> -->
+        </li>
+        <li>2.上传Excel文件</li>
+        <li>
+            <input type="text" class="filePath" readonly="readonly">
+            <label class="uploadBtn" for="fileBtn">
+                <i class="anticon anticon-upload"></i>上传文件
+            </label>
+            <input type="file" class="uploadFile" id="fileBtn" ng2FileSelect [uploader]="uploader"
+                (change)="selectedFileOnChanged($event)" />
+        </li>
+        <li *ngIf="warnMsg" class="tip">
+            <!-- {{warnMsg|translate}} -->
+        </li>
+        <li style="margin-bottom:20px;">
+            <span style="color:#999999;margin-left:10px;">{{text?text:'说明：导入数据量上限为1000条，文件大小2M'}}</span>
+        </li>
+    </ul>
+    <!-- 上传结果 -->
+    <div *ngIf="resultflag" class="ba-upload-result">
+        <div *ngIf="resultStatus==0">
+            <p>批量导入成功</p>
+        </div>
+        <div *ngIf="resultStatus==1">
+            <!-- <p *ngFor="let text of warningText">{{text}}</p> -->
+            <p>批量导入数据中，有数据不满足导入规则</p>
+            <p style="padding-top: 10px;"><i (click)="downloadResult()">错误说明.txt</i></p>
+        </div>
+        <p *ngIf="resultStatus==2">
+            {{exportResult}}
+        </p>
+    </div>
+</div>

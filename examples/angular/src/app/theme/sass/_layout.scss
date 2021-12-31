@@ -1,0 +1,382 @@
+@import 'conf/conf';
+$left-space: $sidebar-width;
+@include scrollbars(.5em, #d9d9d9, rgba(0, 0, 0, 0));
+html {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    overflow-x: auto;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 12px;
+    background: #E8E8E8;
+    min-width: 1200px;
+    margin: auto;
+}
+
+a {
+    transition: color 0.5s ease;
+    outline: 0 !important;
+}
+
+.pages-main {
+    height: 100%;
+    .logo {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        background: #fff;
+    }
+}
+
+.al-main {
+    box-sizing: border-box;
+    transition: margin-left .5s;
+    position: relative;
+    //height: calc(100% - 50px);
+    height: calc(100%);
+    overflow-x: hidden;
+}
+
+.page-main {
+    margin: 0 20px 20px 20px;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10);
+}
+
+.details {
+    .ant-menu-horizontal {
+        margin-bottom: 20px;
+    }
+}
+.page-search {
+    background: #FFFFFF;
+    position: relative;
+    max-height: 206px;
+    margin: 0 20px 20px 20px;
+    overflow-y: auto;
+    .page-searchWarp {
+        position: relative;
+        padding: 15px 0;
+    }
+    .col {
+        padding-left: 0;
+        padding-right: 5px;
+        line-height: 40px;
+    }
+    .col-form-label {
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 40px;
+        padding-right: 20px;
+        &::after{
+            content: ':';
+            position: absolute;
+            right:10px;
+        }
+    }
+    .page-searchL {
+      width: 80%;
+      padding-left:15px;
+    }
+    .page-searchR {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        &.page-aloneSearch {
+            right: 60px;
+        }
+    }
+    .ant-calendar-picker-input {
+        padding: 0;
+    }
+    // .ant-input {
+    //     height: 32px;
+    //     padding-left: 5px;
+    // }
+    .ant-calendar-range-picker-separator {
+        line-height: 30px;
+    }
+    .ant-select-selection--single {
+        height: 32px;
+    }
+    .ant-select-selection__rendered {
+        line-height: 32px;
+    }
+    .ant-calendar-picker {
+        width: 100%;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    nz-tree-select{
+      width: 100%;
+    }
+    .ant-btn{
+      margin-top: 4px;
+    }
+}
+
+.al-content {
+    height: 100%;
+    .ant-radio-wrapper:hover .ant-radio .ant-radio-inner,
+    .ant-radio:hover .ant-radio-inner,
+    .ant-radio-focused .ant-radio-inner,
+    .ant-radio-checked .ant-radio-inner {
+        border-color: #2D9AFF;
+    }
+    .tableTrHover {
+        background-color: #ecf6fd;
+    }
+    .tableNewCreate {
+        background-color: #ecf6fd;
+    }
+    .ant-btn-lg {
+        font-size: 12px;
+    }
+    .ant-btn-default {
+        color: #222;
+    }
+    .ant-dropdown-link {
+        color: #6A97F8!important;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: $resXS) {
+    .al-content {
+        padding: 8px 10px;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.oper-style {
+    color: #329DFF;
+    cursor: pointer;
+}
+
+.oper-style.ant-btn {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.oper-divider {
+    color: #D8D8D8;
+    padding: 0 8px;
+}
+
+.oper-style-forbid {
+    color: #BFBFBF;
+    cursor: not-allowed;
+}
+
+.page-header {
+    padding: 20px 0 20px 20px;
+    font-size: 12px;
+    color: #666666;
+    box-sizing: border-box;
+}
+
+.page-buttongroup {
+    padding: 10px 0;
+    .creat-btn {
+        padding: 0 11px;
+    }
+}
+
+.table-min-height {
+    min-height: 355px;
+    background: #fff;
+}
+
+.table-height {
+  overflow: auto;
+    height: 451px;
+}
+
+.page-container .ant-table-thead>tr>th.ant-table-column-sort {
+    background: #FAFAFA
+}
+
+.ant-message .ant-message-notice:first-child {
+    margin-top: 25%;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+:focus {
+    outline: none;
+}
+
+.modal-overflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '：';
+        right: 2px;
+    }
+}
+// 备件分类、知识分类 左右布局
+.page-article{
+  // display: flex;
+  // height: calc(100% - 40px);
+  // .page-aside{
+  //   flex: 0 0 250px;
+  //   height: 100%;
+  //   overflow-y: auto;
+  //   margin: 0 0 20px 20px;
+  //   padding: 10px;
+  //   box-sizing: border-box;
+  //   background: #FFFFFF;
+  //   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10);
+  //   .page-aside-search{
+  //     margin-bottom: 10px;
+  //   }
+  // }
+  // .page-section{
+  //   flex: 1 1 auto;
+  //   overflow: hidden;
+  // }
+  position: relative;
+  .page-aside{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 270px;
+    margin: 0 0 0 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10);
+    .page-aside-search{
+      margin-bottom: 10px;
+    }
+    .page-aside-tab{
+      .ant-tabs-bar{
+        margin: 0;
+      }
+    }
+    .page-aside-body{
+      height: calc(100% - 50px);
+      overflow-y: auto;
+    }
+  }
+  .page-section{
+    padding-left: 290px;
+  }
+}
+// 表格section
+.table-section{
+  .table-header{
+    display: flex;
+    padding: 10px 0;
+    .table-actions{
+      flex: 1;
+    }
+  }
+  // 表格标题
+  .table-title{
+    flex: 1;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    &::before{
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background-color: #329DFF;
+      margin: 4px 8px 0 0;
+      vertical-align: top;
+    }
+  }
+}
+//tree的自定义节点样式
+.tree-custom-node{
+  .tree-node-btnGroup{
+    display: none;
+    [nz-icon]{
+      margin-left: 10px;
+    }
+  }
+  &:hover{
+    .tree-node-btnGroup{
+      display: inline-block;
+    }
+  }
+}
+// 表单标题
+.form-header{
+  display: flex;
+  padding: 10px 0;
+  .form-actions{
+    flex: 1;
+  }
+}
+// 表格标题
+.form-title{
+  flex: 1;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  &::before{
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background-color: #329DFF;
+    margin: 4px 8px 0 0;
+    vertical-align: top;
+  }
+}
+// 表单加、减号
+.form-actions-icon{
+  font-size: 20px;
+  line-height: 33px;
+  cursor: pointer;
+}
+// 维保策略:指导文件|使用工具;超级BOM:下发:设备编码
+.form-correlation{
+  width: 100%;
+  display: flex;
+  .form-correlation-input{
+    flex: 1;
+  }
+  .form-correlation-btn{
+    margin-left: 10px;
+  }
+}
+app-select-table.ng-dirty.ng-invalid{
+  .select-table{
+    .select-table-input-section{
+      border: 1px solid #f00;
+    }
+  }
+}
+.ant-table table > tbody.ant-table-tbody tr.tr-selected-active td{
+  background-color:#f2f2f2
+}

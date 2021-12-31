@@ -1,0 +1,187 @@
+@import '../../sass/conf/conf';
+li{
+    list-style: none;
+}
+.page-top {
+    // position: fixed;
+    // top:0;
+    position: relative;
+    z-index: 11;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    height: 50px;
+    width: 100%;
+    min-width: $resMin;
+    padding-right: 20px;
+    background-color: #ffffff;
+    .page-top-collapsed {
+        display: inline-block;
+        line-height: 50px;
+        width: 50px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold
+    }
+    .user-profile {
+        padding-top: 8px;
+        // display: flex;
+        .user-profile-item {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        img.user-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+        .sassicon-navigation-skin,
+        .sassicon-navigation-sms,
+        .sassicon-navigation-inform {
+            font-size: 20px;
+        }
+    }
+    .top-badge {
+        display: inline-block;
+        padding-right: 50px;
+        // padding-top: 12px;
+        img {
+            width: 20px;
+            height: 20px;
+        }
+        .ant-badge-count {
+            height: 15px;
+            width: 15px;
+            min-width: 15px;
+            border-radius: 50%;
+            font-size: 8px;
+            line-height: 15px;
+            right: -5px;
+        }
+        .ant-scroll-number-only,
+        .ant-scroll-number-only>p {
+            height: 15px;
+        }
+    }
+    .badge-notifications {
+        .ant-badge-count {
+            background-color: #ffbf00;
+        }
+    }
+    // .user-skin {
+    //     padding-right: 25px;
+    // }
+    .user-input {
+        width: 150px;
+        height: 36px;
+        line-height: 36px;
+        margin-right: 40px;
+        .ant-input {
+            border: 1px solid #DADDE8;
+            outline: none;
+        }
+        .ant-input:focus {
+            box-shadow: none;
+        }
+        .ant-input:hover {
+            border: 1px solid #DADDE8;
+        }
+    }
+    .al-user-profile {
+        display: inline-block;
+        margin-right: 12px;
+        transition: all .15s ease-in-out;
+        padding: 0;
+        border: 0;
+        opacity: 1;
+        position: relative;
+        ul.profile-dropdown:after {
+            bottom: 100%;
+            right: 0;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-bottom-color: #fff;
+            border-width: 10px;
+            margin-right: 28px;
+        }
+        span.name,
+        a {
+            color: #222222;
+            line-height: 36px;
+        }
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+    }
+    .search {
+        text-shadow: none;
+        font-size: 13px;
+        line-height: 25px;
+        transition: all 0.5s ease;
+        white-space: nowrap;
+        //overflow: hidden;
+        width: 162px;
+        float: left;
+        label {
+            cursor: pointer;
+        }
+        i {
+            width: 16px;
+            display: inline-block;
+            cursor: pointer;
+            padding-left: 1px;
+            font-size: 16px;
+            margin-right: 13px;
+            color: #bababa;
+        }
+        input {
+            color: $sidebar-text;
+            background: none;
+            border: none;
+            outline: none;
+            width: 120px;
+            padding: 0;
+            margin: 0 0 0 -3px;
+            height: 27px;
+        }
+    }
+    .topli {
+        line-height: 50px;
+        height: 50px;
+        padding: 0 9px;
+        font-size: 14px;
+        color: #999999;
+        letter-spacing: 0;
+    }
+    .topli-list {
+        line-height: 25px;
+        height: 25px;
+        border: 1px solid black;
+        list-style: none;
+        padding: 0 9px;
+        color: #333333;
+        font-size: 13px;
+        text-align: center;
+    }
+    .rm-bm{
+        border-bottom: none;
+    }
+    .select-top{
+        height: 20px;
+    }
+    .font-icon-ul {
+        .topli {
+            i {
+                font-size: 16px;
+            }
+        }
+    }
+    .cursor {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,226 @@
+.ant-layout-header.rootcloudHeader{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.rootcloudContent{
+    // margin-top:56px;
+}
+* {
+    box-sizing: border-box;
+  }
+
+  h3, h3 code {
+    font-size: 20px;
+  }
+
+  .flex {
+    display: flex;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .container {
+    flex: 1;
+  }
+  .container:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .vamp {
+    background: rgba(255, 255, 255, 0.4);
+    list-style: none;
+    padding: 8px;
+    color: #222;
+  }
+
+  .vamp:not(:last-child) {
+    border-bottom: 1px solid #777;
+  }
+  ::ng-deep .cdk-drag-preview {
+    display: table;
+  }
+
+  ::ng-deep .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  .resize-trigger {
+    width: 1px;
+    // height: 30px;
+    // margin-top: 12px;
+    background: #e8e8e8;
+    height: 55%;
+    transform: translateY(45%);
+  }
+  .nz-resizable-preview {
+    position: absolute;
+    z-index: 100;
+    border-width: 0;
+    border-right-width: 1px;
+    border-right-color: #f00;
+  }
+  .ant-table-thead > tr > th{
+    background-color: #fff;
+  }
+  .ant-table-thead > tr > th.ant-table-cell-fix-left,
+  .ant-table-thead > tr > th.ant-table-cell-fix-right{
+    position: sticky!important;
+    z-index: 10;
+  }
+
+
+  a:link, a:visited, a:hover, a:active { color: lightblue; }
+@mixin full {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@mixin pos($n:absolute) {
+    position: $n;
+}
+
+@mixin flex($n:column) {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: $n;
+    -moz-flex-direction: $n;
+    -o-flex-direction: $n;
+    -ms-flex-direction: $n;
+    flex-direction: $n;
+}
+
+@mixin grow($n:1) {
+    -webkit-flex-grow: $n;
+    -moz-flex-grow: $n;
+    -o-flex-grow: $n;
+    -ms-flex-grow: $n;
+    flex-grow: $n;
+}
+
+@mixin cent {
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -moz-align-items: center;
+    -moz-justify-content: center;
+    -o-align-items: center;
+    -o-justify-content: center;
+    -ms-align-items: center;
+    -ms-justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin translate($n:translate(100%)) {
+    -webkit-transform: $n;
+    -moz-transform: $n;
+    -o-transform: $n;
+    -ms-transform: $n;
+    transform: $n;
+}
+
+@mixin shrink($n:0) {
+    -webkit-flex-shrink: $n;
+    -moz-flex-shrink: $n;
+    -o-flex-shrink: $n;
+    -ms-flex-shrink: $n;
+    flex-shrink: $n;
+}
+
+@mixin wrap($n:wrap) {
+    -webkit-flex-wrap: $n;
+    -moz-flex-wrap: $n;
+    -o-flex-wrap: $n;
+    -ms-flex-wrap: $n;
+    flex-wrap: $n;
+}
+
+@mixin clear {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+@mixin border($w:.32rem, $h:.01rem, $l:-.16rem, $b:0) {
+    content: "";
+    display: block;
+    width: $w;
+    height: $h;
+    @include pos;
+    left: 50%;
+    margin-left: $l;
+    bottom: $b;
+}
+
+@mixin arrows($w:.16rem, $h:.16rem, $b:2px, $c:#999, $m:.14rem) {
+    display: inline-block;
+    width: $w;
+    height: $h;
+    border-left:#{$b} solid #{$c};
+    border-bottom:#{$b} solid #{$c};
+    -webkit-transform: rotateZ(45deg);
+    transition: transform 0;
+    margin: $m;
+}
+
+@mixin dis($s:block, $h:.32rem, $w:1.2rem, $c:center, $r:0) {
+    display: block;
+    width: $w;
+    height: $h;
+    line-height: $h;
+    text-align: $c;
+    text-indent: $r;
+}
+
+@mixin ell {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin tell($w:.4rem, $h:.3rem, $b:#fff) {
+    content: "...";
+    position: absolute;
+    width: $w;
+    height: $h;
+    bottom: 0;
+    right: 0;
+    background: $b;
+}
+
+@mixin onepx {
+    height: 1px;
+    content: '';
+    width: 100%;
+    border-top: 1px solid #000;
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    transform: scale3d(0, 0.5, 0);
+    -webkit-transform: scale3d(0, 0.5, 0);
+}
+
+@mixin box-border($l:left, $t:top, $w:3px, $h:10px, $c:#2D9AFF) {
+    //p:位置;m:距离,w:边框颜色,c:颜色;
+    position: absolute;
+    #{$l}: 0;
+    #{$t}: 0;
+    width: $w;
+    height: $h;
+    background: $c;
+}
+
+//表格部分文字过长导致换行，与动态表格错位
+.page-container .ant-table-middle .ant-table-thead>tr>th {
+    white-space: nowrap;
+}

@@ -1,0 +1,64 @@
+.ba-upload {
+    text-align: left;
+    /* Excel导入 */ 
+    .ba-upload-main {
+        border: 1px dashed #EAEAEA;
+        padding:5px 0;
+        li {
+            margin-left:40px;
+            position:relative;
+            margin-bottom: 10px;  
+            list-style: none;      
+        }
+        .uploadBtn{
+            border:none;
+            border: 1px solid #2D9AFF;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #2D9AFF;
+            padding:4px 8px;
+            background-color:#fff;
+            margin-left:10px;
+            i {
+                padding-right: 2px;
+            }
+        }
+        // .filePath{
+        //      color: #E70012;
+        // }
+        input{
+            border: 1px solid #DDDDDD;
+            width:248px;
+            height:28px;
+            margin-left:10px;
+            text-indent: 5px;
+            border-radius: 4px;
+        }
+        .uploadFile{
+            width: 0px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            right: 70px;
+            opacity: 0;
+        }
+        .tip {
+            margin-top: -9px;
+            margin-left: 50px;
+            color: #FF0000;
+        }
+    }
+    /* 导出结果 */
+    .ba-upload-result {
+        padding: 40px 30px;
+        max-height: 300px;
+        overflow-y: auto;
+        p {
+            i {
+                color:#00A7FF;
+                cursor:pointer;
+                font-style: normal;
+            }
+        }
+    }    
+}

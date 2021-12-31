@@ -1,0 +1,145 @@
+@import '../../sass/conf/conf';
+.pages-menus {
+    background: #fff;
+    @include scrollbars(.5em, #042C52, rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 100%;
+    .pages-div {
+        width: 200px;
+        overflow-y: auto;
+        height: 100%;
+        scrollbar-face-color: #042C52;
+        /*面子*/
+        scrollbar-arrow-color: #042C52;
+        /*箭头*/
+        scrollbar-highlight-color: #042C52;
+        /*左二*/
+        scrollbar-shadow-color: #042C52;
+        /*右二*/
+        scrollbar-darkshadow-color: #042C52;
+        /*右一*/
+        scrollbar-track-color: #042C52;
+        /*滑道*/
+        &.pages-isCollapsed{
+            overflow: initial;
+        }
+        .ant-menu .menu-active{
+            &.active{
+                background: #2D9AFF;
+                color: #fff;
+            }
+        }
+        .ant-menu .ant-menu-submenu .ant-menu-sub {
+            ul {
+                .active {
+                    background: #2D9AFF;
+                    color: #fff;
+                }
+            }
+        }
+        .ant-menu-submenu-vertical>.ant-menu {
+            min-width: 120px;
+        }
+    }
+    .ant-menu.ant-menu-dark .ant-menu-item-selected {
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.67);
+    }
+    .ant-menu-dark,
+    .ant-menu-dark .ant-menu-sub {
+        background: #031F3B;
+    }
+    .ant-menu-dark .ant-menu-inline.ant-menu-sub {
+        background: #001830;
+    }
+    .uopicon-default{
+        &.uopicon-parent{
+            >i{
+                font-size: 16px;
+                line-height: 42px;
+                margin: 0;
+            }
+            >i+span{
+                max-width: 0;
+                display: inline-block;
+                opacity: 0;
+            }
+        }
+        >i{
+            font-size: 14px;
+            margin-right: 10px;
+        }
+    }
+    .uopicon-open {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .uopicon-close {
+        font-size: 16px;
+        line-height: 42px;
+        margin: 0;
+    }
+    .uopicon-close+span {
+        max-width: 0;
+        display: inline-block;
+        opacity: 0;
+    }
+    .pages-div ul i::before {
+        color: rgba(255, 255, 255, 0.67);
+    }
+    .ant-menu-submenu-title:hover i::before {
+        color: #fff;
+    }
+    .pages-div ul ul {
+        border-radius: 5px;
+    }
+    .actived::before{
+      color: #fff !important;
+    }
+    .imgIcon{
+        width: 22px;
+    }
+}
+.ant-menu-submenu-selected{
+    position: relative;
+    background-color: #f9f9fb;
+    & > .ant-menu{
+        background-color: #f9f9fb;
+        .ant-menu-item-selected{
+            background-color: #f2f2f5;
+        }
+    }
+}
+li.ant-menu-submenu-selected::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-left: 4px solid #00B259;
+    content: "";
+}
+.ant-menu-submenu-vertical > .ant-menu-submenu-title .ant-menu-submenu-arrow::before, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title .ant-menu-submenu-arrow::before, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title .ant-menu-submenu-arrow::before, .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::before, .ant-menu-submenu-vertical > .ant-menu-submenu-title .ant-menu-submenu-arrow::after, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title .ant-menu-submenu-arrow::after, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title .ant-menu-submenu-arrow::after, .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after{
+    width:12px;
+    height:2px;
+    margin-top:4px;
+}
+.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after{
+    transform: rotate(45deg) translateX(-5px);
+}
+.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::before{
+    transform: rotate(-45deg) translateX(5px);
+}
+.ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::before{
+    transform: rotate(45deg) translateX(5px);
+}
+.ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after{
+    transform: rotate(-45deg) translateX(-5px);
+}
+.ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow{
+    transform: translateY(-7px);
+}
+.ant-layout-sider-trigger{
+    text-align: right;
+    padding-right:20px;
+    background:#00B259;
+}

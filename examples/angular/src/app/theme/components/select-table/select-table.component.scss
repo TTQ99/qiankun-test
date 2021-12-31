@@ -1,0 +1,145 @@
+@import '../../sass/layout';
+$selector: select-table;
+.#{$selector}{
+  width: 100%;
+  min-height: 32px;
+  position: relative;
+  .#{$selector}-input-section{
+    width: 100%;
+    height: auto;
+    border: 1px solid #d9d9d9;
+    // border-radius: 4px;
+    border-radius: 1px;
+  }
+  .#{$selector}-button-section{
+    width: 100%;
+    height: auto;
+    // border: 1px solid #d9d9d9;
+    // border-radius: 4px;
+    cursor: pointer;
+    color:#00B259
+  }
+  .#{$selector}-placeholder{
+    color: #c9c9c9;
+    cursor: pointer;
+  }
+  .#{$selector}-multiple{
+    // cursor: pointer;
+    .ant-select-selector{
+      padding: 1px 11px;
+      margin-bottom: 0;
+    }
+    &.#{$selector}-disabled{
+      cursor: not-allowed;
+      .ant-select-selector{
+        background-color: #f5f5f5;
+        color: rgba(0, 0, 0, 0.25)
+      }
+    }
+  }
+  // .#{$selector}-multiple{
+  //   padding: 4px 11px;
+  //   min-height: 30px;
+  //   max-height: 150px;
+  //   overflow-y: scroll;
+  //   &.#{$selector}-disabled{
+  //     background-color: #f5f5f5;
+  //     cursor: not-allowed;
+  //     color: rgba(0, 0, 0, 0.25)
+  //   }
+  // }
+  // .#{$selector}-multiple-item{
+  //   display: inline-block;
+  //   padding: 0 25px 0 5px;
+  //   margin: 4px 8px 4px 0;
+  //   line-height: 20px;
+  //   border: 1px solid #ccc;
+  //   position: relative;
+  //   .#{$selector}-icon-clear{
+  //     z-index: 2;
+  //     top: 4px;
+  //     right: 4px;
+  //     background-color: #fff;
+  //     cursor: pointer;
+  //   }
+  // }
+  .#{$selector}-single{
+    position: absolute;
+    width: 100%;
+    padding: 4px 30px 4px 11px;
+    height: 32px;
+    line-height: 22px;
+    // cursor: pointer;
+    .#{$selector}-text{
+      display: block;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .#{$selector}-icon-down{
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+    }
+    .#{$selector}-icon-clear{
+      z-index: 2;
+      background-color: #fff;
+      display: none;
+      cursor: pointer;
+    }
+    &:hover .#{$selector}-icon-clear{
+      display: block;
+    }
+    &.#{$selector}-disabled{
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.25)
+    }
+  }
+  .#{$selector}-icon{
+    position: absolute;
+    right: 11px;
+    top: 8px;
+    z-index: 1;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    color:rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+  }
+  &.#{$selector}-open .#{$selector}-icon{
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.select-list{
+  padding: 10px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  .select-search + .select-table-list{
+    margin-top: 10px;
+  }
+  .ant-table-thead > tr > th{
+    padding: 8px!important;
+    cursor: default
+  }
+  .ant-table-tbody > tr > td{
+    padding: 8px;
+    cursor: default;
+    word-break: break-all;
+  }
+  .ant-table-pagination.ant-pagination{
+    margin-bottom: 0px
+  }
+  .select-table-close{
+    color: rgba(0,0,0,.25);
+    &:hover{
+      color: rgba(0,0,0,.45);
+    }
+  }
+}

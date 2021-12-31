@@ -1,0 +1,85 @@
+<div class="select-table" #trigger cdkOverlayOrigin #origin="cdkOverlayOrigin">
+  <ng-container *ngIf="_isShowInput">
+    <!-- 单选 -->
+    <div class="select-table-input-section select-table-single" *ngIf="!multiple"
+      [ngClass]="{'select-table-disabled': isDisabled}" (click)="triggleOpen()">
+      <!-- <span *ngIf="_name==''" class="select-table-placeholder">{{placeHolder|translate}}</span> -->
+      <span class="select-table-text">{{_name}}</span>
+      <span class="select-table-icon select-table-icon-clear" *ngIf="_name && !isOpen && !isDisabled"
+        (click)="resetInput($event)"><i nz-icon nzType="close-circle" nzTheme="fill"
+          class="select-table-close"></i></span>
+      <span class="select-table-icon select-table-icon-down"><i nz-icon nzType="down" nzTheme="outline"></i></span>
+    </div>
+    <!-- 多选 -->
+    <div class="ant-select-multiple select-table-multiple" *ngIf="multiple"
+      [ngClass]="{'select-table-disabled': isDisabled}" (click)="triggleOpen()">
+      <ul class="ant-select-selector">
+        <!-- <li *ngIf="checkedList.length == 0"> <span class="select-table-placeholder">{{placeHolder|translate}}</span>
+        </li> -->
+        <li class="ant-select-selection-item" *ngFor="let item of checkedList; index as i;">
+          <div class="ant-select-selection-item-content">{{item[showField]}}</div>
+          <span class="ant-select-selection-item-remove" (click)="deleteItem($event, i)"><i nz-icon nzType="close"
+              nzTheme="outline"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="select-table-input-section select-table-multiple" [ngClass]="{'select-table-disabled': isDisabled}"
+      *ngIf="multiple && checkedList.length>0" (click)="triggleOpen()">
+      <span *ngIf="checkedList.length == 0" class="select-table-placeholder">{{placeHolder|translate}}</span>
+      <div class="select-table-multiple-item" *ngFor="let item of checkedList;index as i;">
+        {{item[showField]}}
+        <span class="select-table-icon select-table-icon-clear" (click)="deleteItem($event,i)"><i nz-icon nzType="close-circle" nzTheme="fill" class="select-table-close"></i></span>
+      </div>
+    </div> -->
+  </ng-container>
+  <div class="select-table-button-section" *ngIf="!_isShowInput" (click)="triggleOpen()">
+    <span class="select-table-text">{{_name}}</span>
+  </div>
+  <ng-template cdkConnectedOverlay [cdkConnectedOverlayHasBackdrop]="true" [cdkConnectedOverlayOrigin]="origin"
+    [cdkConnectedOverlayOpen]="isOpen" [cdkConnectedOverlayWidth]="_width" (positionChange)="onPositionChange($event)"
+    (backdropClick)="closeTable()" (detach)="closeTable();">
+    <div class="select-list" [@selectTableAnimation]="isOpen ? dropDownPosition : 'hidden' ">
+      <div class="select-search" *ngIf="_isShowInput">
+        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+          <input type="text" nz-input [placeholder]="_placeHolder" [(ngModel)]="searchValue" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+          <button nz-button nzType="primary" nzSearch (click)="onSearch()"><i nz-icon nzType="search"
+              nzTheme="outline"></i></button>
+        </ng-template>
+      </div>
+      <div class="select-table-list">
+        <nz-table #SelectTable [nzFrontPagination]="isFrontPagination" nzSize="small" nzShowTotal nzShowPagination
+          nzBordered [nzTotal]="_total" [nzData]="_data" [nzLoading]="_loading" [(nzPageIndex)]="pageIndex"
+          [(nzPageSize)]="pageSize" (nzPageIndexChange)="changePageIndex($event)"
+          [nzScroll]="{'x': scrollX, 'y': scrollY}">
+          <thead>
+            <tr>
+              <!-- <th *ngIf="multiple" nzShowCheckbox [nzWidth]="'50px'" [(nzChecked)]="allChecked"
+                [nzIndeterminate]="indeterminate" (nzCheckedChange)="checkAll($event)"></th>
+               <th [nzWidth]="'80px'" title="{{ 'basicdata.supplier.supplierCode' | translate}}">
+                {{ 'basicdata.supplier.supplierCode' | translate}}
+              </th> -->
+              <!-- <th *ngFor="let thItem of theadList" [nzWidth]="'100px'" title="{{thItem.title | translate}}">
+                {{thItem.title | translate}}
+              </th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of SelectTable.data;index as i" (click)="showName(data)">
+              <!-- 复选框 -->
+              <td *ngIf="multiple" nzShowCheckbox [(nzChecked)]="data.checked"
+                (nzCheckedChange)="refreshStatus($event,data)"></td>
+              <td *ngFor="let thItem of theadList">
+                {{data[thItem.key]}}
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+
+
+      </div>
+    </div>
+  </ng-template>
+</div>

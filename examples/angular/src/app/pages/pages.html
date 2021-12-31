@@ -1,0 +1,19 @@
+<nz-layout class="pages-main">
+    <!-- <nz-header class="rootcloudHeader">
+        <ba-page-top [userInfo]="userInfo" [isCollapsed]="isCollapsed" (logout)="onLogout()"
+            (languageChanged)="luanguageChanged($event)" (layoutMenu)="layoutMenu($event)">
+        </ba-page-top>
+    </nz-header> -->
+    <nz-layout class="rootcloudContent">
+        <!-- <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+            <page-menu #pageMenu [isCollapsed]="isCollapsed"> </page-menu>
+        </nz-sider> -->
+        <nz-content>
+            <div class="al-main">
+                <div class="al-content" #PageMainContent>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

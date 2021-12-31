@@ -1,0 +1,11 @@
+.ba-table{
+  position: relative;
+  .setting{
+    // border: 1px solid #000;
+    position: absolute;
+    right: 0px;
+    z-index: 100;
+    // color: #2D9AFF;
+    font-size: 14px;
+  }
+}

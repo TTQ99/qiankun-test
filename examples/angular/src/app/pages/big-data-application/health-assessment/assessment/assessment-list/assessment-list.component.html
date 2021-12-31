@@ -1,0 +1,82 @@
+<div class="assessment_comtent">
+    <form nz-form nz-form [formGroup]="validateForm">
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="5">
+                <nz-form-item>
+                    <nz-form-label nzFlex="70px" nzFor="email" style="text-align: left;">
+                        线体名称</nz-form-label>
+                    <nz-form-control>
+                        <nz-tree-select nzDropdownClassName='dropdownClass' [(ngModel)]="values" [nzNodes]="nzOptions"
+                            formControlName='test1' [nzDefaultExpandAll]="false" [nzAllowClear]="true"
+                            [nzShowSearch]="true" [nzDropdownMatchSelectWidth]="false" nzPlaceHolder="请选择生产线体">
+                        </nz-tree-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="5">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="8" nzFor="email2">设备名称</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <nz-select [(ngModel)]="equipmentCode" nzAllowClear nzPlaceHolder="请选择设备编号" nzShowSearch
+                            formControlName='equipmentCode' [nzDropdownMatchSelectWidth]='false'>
+                            <nz-option *ngFor="let o of devCodeList" [nzLabel]="o.label" [nzValue]="o" nzCustomContent>
+                                <span>{{o.equipmentName}}</span><span
+                                    style="margin-left: 5px;color:#ccc;">{{o.equipmentCode}}</span>
+                            </nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="8">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="5" nzFor="email2">
+                        评估时间</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <nz-range-picker [(ngModel)]="dateRange" formControlName='date' [nzDisabledDate]="disabledDate">
+                        </nz-range-picker>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="6">
+                <nz-form-item style="float: right;">
+                    <nz-form-control>
+                        <button nz-button [nzType]="'primary'" style="margin-right: 5px;border-radius: 4px;">查询</button>
+                        <button nz-button style="margin-right: 5px;border-radius: 4px;">重置</button>
+                        <!-- <button nz-button [nzType]="'primary'" (click)="ParameterSettings()"
+                            style="border-radius: 4px;">参数配置</button> -->
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+    </form>
+    <nz-table #basicTable [nzData]="list" [nzShowPagination]='false' [nzLoading]='loadingAssessment'>
+        <thead>
+            <tr>
+                <th>设备编码</th>
+                <th>设备名称</th>
+                <th>设备分类</th>
+                <th>设备型号</th>
+                <th>设备品牌</th>
+                <th>评估结果</th>
+                <th nzRight>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of basicTable.data,let i=index">
+                <td>{{ data.title }}</td>
+                <td>{{ data.cover }}</td>
+                <td>{{ data.id }}</td>
+                <td>{{ data.rate }}</td>
+                <td>{{ data.cover_x }}</td>
+                <td>{{ data.cover_y}}</td>
+                <td nzRight>
+                    <!-- <a>Action 一 {{ data.name }}</a> -->
+                    <!-- <nz-divider nzType="vertical"></nz-divider> -->
+                    <span style="color: #00B259;cursor:pointer;margin-right: 5px;"
+                        (click)='EvaluationDetails(data)'>详情</span>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+
+</div>

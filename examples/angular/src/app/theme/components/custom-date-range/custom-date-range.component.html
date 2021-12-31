@@ -1,0 +1,14 @@
+<div class="custom-date-range">
+  <div nz-row>
+    <div nz-col [nzSpan]="11">
+      <nz-date-picker [nzAllowClear]="false" [(ngModel)]="startDate" nzPlaceHolder="请选择"
+        (ngModelChange)="startDateChange($event)"></nz-date-picker>
+    </div>
+    <div nz-col [nzSpan]="2" class="text-center">-</div>
+    <div nz-col [nzSpan]="11">
+      <nz-date-picker [nzAllowClear]="false" [nzDisabledDate]="disabledEndDate" [(ngModel)]="endDate"
+        (ngModelChange)="onEndChange()" nzPlaceHolder="请选择">
+      </nz-date-picker>
+    </div>
+  </div>
+</div>

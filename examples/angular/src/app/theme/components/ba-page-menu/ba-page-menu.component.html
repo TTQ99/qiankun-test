@@ -1,0 +1,40 @@
+<div class="pages-menus">
+    <div class="pages-div" [class.pages-isCollapsed]="isCollapsed">
+        <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+            <ng-container *ngFor="let parent of menus;let i=index;">
+                <ng-container *ngIf="(!parent.children) || (parent.children && parent.children.length == 0) ">
+                    <li nz-menu-item (click)="selectedItem($event)" class="menu-active" [routerLink]="[parent.path]"
+                        routerLinkActive="active">
+                        <span title [class.uopicon-parent]="isCollapsed" class="uopicon-default">
+                            <!-- <img [src]='"src/assets/menu-icon/icon/"+parent.value+".png"' alt=""> -->
+                            <i [class.uopicon-open]="!isCollapsed" [attr.id]="isCollapsed?'aaa':'bbb'"
+                                [class.uopicon-close]="isCollapsed" class="{{parent.iconClass}}"
+                                style="margin-right:10px;"></i>
+                            <!-- <span title="{{parent.nameCn | translate}}">{{parent.nameCn | translate}}</span> -->
+                        </span>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="parent.children&&parent.children.length>0">
+                    <li nz-submenu [nzOpen]="menuList[i] || navigationMenu.isActive" #navigationMenu="routerLinkActive"
+                        [routerLinkActive]="['active1']" (nzOpenChange)="openChange($event,i)">
+                        <span title [class.uopicon-parent]="isCollapsed" class="uopicon-default">
+                            <!-- <img class="imgIcon"
+                                [src]="menuList[i] && navigationMenu.isActive?'../../../../assets/menu-icon/icon/'+parent.icon.split(',')[1]+'.png':'../../../../assets/menu-icon/icon/'+parent.icon.split(',')[0]+'.png'"
+                                alt=""> -->
+                            <i [class.uopicon-open]="!isCollapsed" [attr.id]="isCollapsed?'aaa':'bbb'"
+                                [class.nzType-close]="isCollapsed" class="{{parent.iconClass}}"
+                                style="margin-right:10px;"></i>
+                            <!-- <span title="{{parent.nameCn | translate}}">{{parent.nameCn | translate}}</span> -->
+                        </span>
+                        <ul>
+                            <!-- <li (click)="selected($event)" nz-menu-item [routerLink]="[item.url]"
+                                routerLinkActive="active" *ngFor="let item of parent.children"
+                                title="{{item.nameCn | translate}}">{{item.nameCn | translate}}</li> -->
+                        </ul>
+                    </li>
+                </ng-container>
+            </ng-container>
+        </ul>
+        <div style="height: 100px;"></div>
+    </div>
+</div>

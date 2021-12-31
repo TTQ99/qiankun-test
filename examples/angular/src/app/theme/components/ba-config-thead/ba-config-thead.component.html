@@ -1,0 +1,19 @@
+<nz-modal [nzWidth]="600" [(nzVisible)]="isVisible" [nzTitle]="'表头配置'" (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()">
+  <nz-transfer #nzTransfer [nzListStyle]="{ 'width.%': 50 }" [nzDataSource]="data" [nzDisabled]="disabled"
+    [nzTitles]="['隐藏列表', '显示/冻结列表']" (nzSelectChange)="select($event)" (nzChange)="changes($event)"
+    [nzRenderList]="[null,rightRenderList]">
+    <ng-template #rightRenderList let-items let-onItemSelect="onItemSelect">
+      <div cdkDropList (cdkDropListDropped)="theadSortDrag($event,items)">
+        <div #targetItem *ngFor="let item of items" cdkDrag [cdkDragDisabled]="item.disabled">
+          <label nz-checkbox [ngModel]="item.checked" [nzDisabled]="item.disabled" (ngModelChange)="onItemSelect(item)">
+            {{item.title}}
+          </label>
+          <span class="fr">
+            <nz-switch nzSize="small" [(ngModel)]="item.fixed"></nz-switch>
+          </span>
+        </div>
+      </div>
+    </ng-template>
+  </nz-transfer>
+</nz-modal>
