@@ -1,6 +1,6 @@
 {
     "/j": {
-        "target": "https://movie.douban.com/",
+        "target": "https://api.juejin.cn/tag_api/v1",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {

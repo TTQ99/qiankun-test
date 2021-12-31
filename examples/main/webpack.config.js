@@ -17,7 +17,7 @@ module.exports = {
     overlay: { warnings: false, errors: true },
     proxy: {
      "http://localhost:7099/j": {
-        "target": "https://movie.douban.com/",
+        "target": "https://api.juejin.cn",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {

@@ -24,7 +24,7 @@ export class HealthAssessmentService extends BaseService {
     super(http, httpClient, router, activedRoute, location, message);
   }
   customCopy() {
-    return this.jsonCall({}, this.path + `j/search_subjects?type=movie&tag=热门&sort=recommend&page_limit=100&page_start=0`, 'get');
+    return this.jsonCall({}, this.path + `https://cnodejs.org/api/v1/topics`, 'get');
   }
 
 }

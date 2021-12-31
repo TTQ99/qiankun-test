@@ -67,7 +67,7 @@ export class AssessmentListComponent extends BasePage {
   customCopy() {
     this.service.customCopy().then((result) => {
       console.log('%c 🍏 result: ', 'font-size:20px;background-color: #FFDD4D;color:#fff;', result);
-      this.list = result.subjects
+      this.list = result
     }).catch((err) => {
 
     });

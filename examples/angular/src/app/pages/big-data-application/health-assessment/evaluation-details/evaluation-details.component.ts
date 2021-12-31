@@ -110,7 +110,7 @@ export class EvaluationDetailsComponent extends BasePage implements OnInit {
       this.deviceModel = data.equipmentModel
       this.deviceScore = data.deviceScore ? (data.deviceScore).toFixed(2) : 0
       this.startTime = 1590033600000 //设置起始时间
-      this.indicator = data.submoduleEvaluationInfo.map((item) => {
+      this.indicator = data.submoduleEvaluationInfo?.map((item) => {
         return {
           name: item.modularName,
           value: (item.moduleScore).toFixed(2)
